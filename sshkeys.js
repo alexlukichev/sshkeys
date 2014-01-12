@@ -5,7 +5,8 @@
  * Copyright (c) 2014 Alexander Lukichev. All rights reserved
  * 
  */
-var MongoClient = require("mongodb").MongoClient;
+var MongoClient = require("mongodb").MongoClient
+  , fs = require("fs");
   
 var options = {};  // See parseArgs()
 
