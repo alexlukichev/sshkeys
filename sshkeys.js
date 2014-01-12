@@ -30,7 +30,7 @@ function updateKeys() {
               for (var i=0; i<users.length; i++) {
                   if (users[i].sshKeys) {
                       for (var j=0; j<users[i].sshKeys.length; j++) {
-                        s += users[i].sshKeys[j]+"\n";
+                        s += "command=\"USER="+users[i]._id+" mkdir -p $HOME/$USER && cd $HOME/$USER && $SSH_ORIGINAL_COMMAND\",no-agent-forwarding,no-user-rc,no-X11-forwarding,no-port-forwarding " + users[i].sshKeys[j]+"\n";
                     }
                   }
               }              
