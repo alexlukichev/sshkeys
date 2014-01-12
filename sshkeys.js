@@ -66,8 +66,8 @@ function parseArgs() {
     return false;
   }
   
-  options.mountPoint = args[args.length - 1];
-  options.sshDir = args[args.length - 2];
+  options.sshDir = args[args.length - 1];
+  options.mongoUrl = args[args.length - 2];
   
   return true;
 }
