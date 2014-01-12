@@ -27,8 +27,10 @@ function updateKeys() {
           } else {              
               var s = "";
               for (var i=0; i<users.length; i++) {
-                  if (users[i].sshKey) {
-                      s += users[i].sshKey+"\n";
+                  if (users[i].sshKeys) {
+                      for (var j=0; j<users[i].sshKeys.length; j++) {
+                        s += users[i].sshKeys[j]+"\n";
+                    }
                   }
               }              
               fs.writeFile(context.sshDir+"/authorized_keys", 
