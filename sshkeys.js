@@ -30,7 +30,7 @@ function updateKeys() {
               for (var i=0; i<users.length; i++) {
                   if (users[i].sshKeys) {
                       for (var j=0; j<users[i].sshKeys.length; j++) {
-                        s += "command=\"$HOME/tools/session "+users[i]._id+" $SSH_ORIGINAL_COMMAND\",no-agent-forwarding,no-user-rc,no-X11-forwarding,no-port-forwarding " + users[i].sshKeys[j]+"\n";
+                        s += "environment=\"USERID="+users[i]._id+"\",no-agent-forwarding,no-user-rc,no-X11-forwarding,no-port-forwarding " + users[i].sshKeys[j]+"\n";
                     }
                   }
               }              
